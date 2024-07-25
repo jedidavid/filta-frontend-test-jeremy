@@ -1,40 +1,38 @@
-Introduction
----
-Thanks for taking the time to complete this frontend technical assessment. We will be focusing on software quality (scalability, readability, maintainability, etc.) and your eye for detail. You may include any libraries, but Vue.js is preferred and jQuery is not recommended. Along with following best practices, bonus points for following our [coding guidelines](https://github.com/mindarc/frontend-assessment/wiki/Coding-guidelines). 
+# Front-end Asssessment
 
-Exercise 1
----
-Build a responsive page based on the designs.
+## Tech
 
-##### Requirements
-1. Match the designs exactly.
-2. Needs to be responsive.
+- HTML
+- Tailwind CSS
+- Javascript
+- Alpine.js
 
-##### Designs
-* exercise1-desktop.png
-* exercise1-mobile.png
+## Installation
 
-##### Assets
-* Desktop banner - https://via.placeholder.com/1920x650
-* Mobile banner - https://via.placeholder.com/600x600
-* Content images - https://via.placeholder.com/400x300
+You can check and view the html files in src folder. No need to run the server.
 
-Exercise 2
----
-Read the `data.json` file and display the data as tabs on desktop and an accordion on mobile.
+However, if you still want to run it which only has Tailwind CSS
+Install the dependencies and start the server.
 
-##### Requirements
-1. Display data in tabs on desktop.
-2. Display data in an accordion on mobile.
-3. Only 1 accordion/tab should be open at a time.
-4. Open the first accordion/tab on load.
-5. If the open accordion is selected, close it.
+```sh
+npm install
+npm run start
+```
 
-###### Bonus points
-* Improve the user experience with meaningful animations/transitions.
-* Design and styling.
-* Explain why the result of `('b' + 'a' + + 'a' + 'a').toLowerCase()` is `banana`.
+## Exercise 1
 
-Submission
----
-We recommend submitting your completed assessment as a forked repository. Please replace README content with instructions and relevant documentation.
+- Go to src folder then view exercise-1.html
+
+## Exercise 2
+
+- Go to src folder then view exercise-1.html
+
+### Bonus Points Explanation:
+
+Explain why the result of `('b' + 'a' + + 'a' + 'a').toLowerCase()` is `banana`
+
+- `'b' + 'a'` results in the string `"ba"`.
+- `"ba" + + 'a'`: The, `+ 'a'` converts `'a'` to `NaN`, `+a` is string that results into a NaN(NotaNumber) so the expression becomes `"ba" + NaN`.
+- `"ba" + NaN` results in the string `"baNaN"`.
+- `"baNaN" + 'a'` results in the string `"baNaNa"`.
+- the `toLowerCase()` method converts `"baNaNa"` to `"banana"`.

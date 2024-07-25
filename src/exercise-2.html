@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filta Front-end Test Exercise 2| Jeremy David</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container mx-auto py-24">
+        <div
+          x-data="{ tabs : [] }"
+          x-init="tabs = await (await fetch('../data.json')).json();"
+        >
+          <div class="md:flex block">
+            <template
+              x-for="tab in tabs"
+              :key="tab.title"
+              x-data="{ selectedAccordionItem: 'tab-header-id-1'}"
+            >
+              <div
+                x-id="['tab-header-id', 'tab-panel-id']"
+                class="w-full divide-slate-300 overflow-hidden text-slate-700"
+              >
+                <div class="divide-y divide-slate-300">
+                  <button
+                    :id="$id('tab-header-id')"
+                    type="button"
+                    class="flex w-full items-center justify-between gap-4 md:bg-transparent bg-slate-100 p-4 text-left underline-offset-2 hover:bg-slate-100/75 focus-visible:bg-slate-100/75 focus-visible:underline focus-visible:outline-none"
+                    :aria-controls="$id('tab-panel-id')"
+                    @click="selectedAccordionItem = $id('tab-header-id');"
+                    :class="selectedAccordionItem === $id('tab-header-id') ? 'text-onSurfaceStrong dark:text-onSurfaceDarkStrong font-bold border-b-2 border-b-green-800'  : 'text-onSurface dark:text-onSurfaceDark font-medium'"
+                    :aria-expanded="selectedAccordionItem === $id('tab-header-id') ? 'true' : 'false'"
+                    x-text="tab.title"
+                  ></button>
+                </div>
+                <div
+                  x-cloak
+                  x-show="selectedAccordionItem === $id('tab-header-id')"
+                  x-hidden
+                  :id="$id('tab-panel-id')"
+                  :aria-labelledby="$id('tab-header-id')"
+                  x-collapse
+                  class="md:absolute md:max-w-screen-2xl w-full md:left-1/2 md:-translate-x-1/2"
+                >
+                  <div
+                    class="p-4 text-sm sm:text-base text-pretty"
+                    x-html="tab.content"
+                  ></div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </body>
+</html>
