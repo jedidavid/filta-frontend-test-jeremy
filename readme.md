@@ -25,7 +25,7 @@ npm run start
 
 ## Exercise 2
 
-- Go to src folder then view exercise-1.html
+- Go to src folder then view exercise-2.html
 
 ### Bonus Points Explanation:
 
