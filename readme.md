@@ -7,25 +7,21 @@
 - Javascript
 - Alpine.js
 
-## Installation
+## Exercise 1
 
-You can check and view the html files in src folder. No need to run the server.
+For Exercise 1 you can directly view the html file in your browser just go to src folder then view exercise-1.html
 
-However, if you still want to run it which only has Tailwind CSS
+## Exercise 2
+
+In Exercise 2 we need a server so we can fetch the json file otherwise we will run into CORS error.
+
 Install the dependencies and start the server.
 
 ```sh
 npm install
 npm run start
+go to http://localhost:5500/src/exercise-2.html
 ```
-
-## Exercise 1
-
-- Go to src folder then view exercise-1.html
-
-## Exercise 2
-
-- Go to src folder then view exercise-2.html
 
 ### Bonus Points Explanation:
 
